@@ -1,10 +1,10 @@
 import { inject, injectable } from 'inversify';
 import { IUserRepository } from './users.repository.interface';
-import { TYPES } from '../types';
-import { MongoService } from '../database';
-import { User } from './user.entity';
-import { IUserModel } from './user.model.interface';
-import { userModel } from './user.model';
+import { TYPES } from '../../../types';
+import { MongoService } from '../../../database';
+import { User } from '../models/user.entity';
+import { IUserModel } from '../models/user.model.interface';
+import { userModel } from '../models/user.model';
 
 @injectable()
 export class UsersRepository implements IUserRepository {
@@ -21,5 +21,9 @@ export class UsersRepository implements IUserRepository {
 
 	async findByEmail(email: string): Promise<IUserModel | null> {
 		return userModel.findOne({ email }).exec();
+	}
+
+	async find(): Promise<IUserModel[]> {
+		return await userModel.find().exec();
 	}
 }

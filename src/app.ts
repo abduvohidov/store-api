@@ -8,9 +8,9 @@ import { json } from 'body-parser';
 import 'reflect-metadata';
 import { IConfigService } from './config/config.service.interface';
 import { IExeptionFilter } from './errors/exeption.filter.interface';
-import { UserController } from './users/users.controller';
+import { UserController } from './modules/users/controllers/users.controller';
 import { IMongoService } from './database';
-import { UsersRepository } from './users/users.repository';
+import { UsersRepository } from './modules/users/repositories/users.repository';
 
 @injectable()
 export class App {

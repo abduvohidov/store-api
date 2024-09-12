@@ -7,13 +7,13 @@ import { IExeptionFilter } from './errors/exeption.filter.interface';
 import { ILogger } from './logger/logger.interface';
 import { LoggerService } from './logger/logger.service';
 import { TYPES } from './types';
-import { UserController } from './users/users.controller';
-import { IUserController } from './users/users.controller.interface';
-import { UserService } from './users/users.service';
-import { IUserService } from './users/users.service.interface';
+import { UserController } from './modules/users/controllers/users.controller';
+import { IUserController } from './modules/users/controllers/users.controller.interface';
+import { UserService } from './modules/users/services/users.service';
+import { IUserService } from './modules/users/services/users.service.interface';
 import { IMongoService, MongoService } from './database';
-import { UsersRepository } from './users/users.repository';
-import { IUserRepository } from './users/users.repository.interface';
+import { UsersRepository } from './modules/users/repositories/users.repository';
+import { IUserRepository } from './modules/users/repositories/users.repository.interface';
 
 export interface IBootstrapReturn {
 	appContainer: Container;
