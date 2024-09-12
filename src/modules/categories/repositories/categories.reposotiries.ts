@@ -41,4 +41,7 @@ export class CategoryRepository implements ICategoryRepository {
 
 		return await categoryModel.findByIdAndUpdate(_id, { name, productsId }, { new: true });
 	}
+	async removeById(id: string): Promise<string | null> {
+		return await categoryModel.findByIdAndDelete(id);
+	}
 }

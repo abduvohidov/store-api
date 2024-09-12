@@ -8,4 +8,5 @@ export interface ICategoryService {
 	getCategoryByName: (name: string) => Promise<ICategoryModel | null>;
 	getCategoryById: (id: string) => Promise<ICategoryModel | null>;
 	updateCategory: (id: string, dto: CategoryUpdateDto) => Promise<ICategoryModel | null>;
+	removeCategory: (id: string) => Promise<string | null>;
 }

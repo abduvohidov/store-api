@@ -7,5 +7,5 @@ export interface ICategoryController {
 	findByName: (req: Request, res: Response, next: NextFunction) => Promise<ICategoryModel | void>;
 	findById: (req: Request, res: Response, next: NextFunction) => Promise<ICategoryModel | void>;
 	update: (req: Request, res: Response, next: NextFunction) => Promise<void>;
-	// remove: (req: Request, res: Response, next: NextFunction) => void;
+	remove: (req: Request, res: Response, next: NextFunction) => Promise<void>;
 }

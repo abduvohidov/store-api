@@ -11,4 +11,5 @@ export interface ICategoryRepository {
 		id: string,
 		{ name, productsId }: CategoryUpdateDto,
 	) => Promise<ICategoryModel | null>;
+	removeById: (id: string) => Promise<string | null>;
 }

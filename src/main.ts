@@ -20,6 +20,12 @@ import { ICategoryRepository } from './modules/categories/repositories/categorie
 import { CategoriesController } from './modules/categories/controllers/categories.controller';
 import { CategoryService } from './modules/categories/services/categories.service';
 import { CategoryRepository } from './modules/categories/repositories/categories.reposotiries';
+import { IProductController } from './modules/products/controllers/product.controller.interface';
+import { IProductService } from './modules/products/services/product.service.interface';
+import { IProductRepository } from './modules/products/repositories/product.repositories.interface';
+import { ProductController } from './modules/products/controllers/product.controller';
+import { ProductService } from './modules/products/services/product.service';
+import { ProductRepository } from './modules/products/repositories/product.repositories';
 
 export interface IBootstrapReturn {
 	appContainer: Container;
@@ -37,6 +43,9 @@ export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 	bind<ICategoryController>(TYPES.CategoryController).to(CategoriesController);
 	bind<ICategoryService>(TYPES.CategoryService).to(CategoryService);
 	bind<ICategoryRepository>(TYPES.CategoriesRepository).to(CategoryRepository);
+	bind<IProductController>(TYPES.ProductController).to(ProductController);
+	bind<IProductService>(TYPES.ProductService).to(ProductService);
+	bind<IProductRepository>(TYPES.ProductRepository).to(ProductRepository);
 	bind<App>(TYPES.Application).to(App);
 });
 

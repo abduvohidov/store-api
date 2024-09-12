@@ -1,7 +1,7 @@
 {
 	"name": "store-api",
 	"version": "1.0.0",
-	"description": "API для проекта store",
+	"description": "API для проекта store-api",
 	"main": "index.js",
 	"type": "commonjs",
 	"scripts": {
@@ -13,7 +13,7 @@
 		"build": "tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"author": "Anton Larichev",
+	"author": "Abdulloh Abduvohidov",
 	"license": "ISC",
 	"dependencies": {
 		"bcryptjs": "^2.4.3",

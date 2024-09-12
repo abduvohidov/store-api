@@ -34,6 +34,11 @@ export class ProductController extends BaseController implements IProductControl
 				func: this.update.bind(this),
 			},
 			{
+				path: '/remove/:id',
+				method: 'delete',
+				func: this.remove.bind(this),
+			},
+			{
 				path: '/name/:name',
 				method: 'get',
 				func: this.findByName.bind(this),

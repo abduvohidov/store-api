@@ -1,7 +1,6 @@
 import express, { Express } from 'express';
 import { Server } from 'http';
 import { inject, injectable } from 'inversify';
-import { ExeptionFilter } from './errors/exeption.filter';
 import { ILogger } from './logger/logger.interface';
 import { TYPES } from './types';
 import { json } from 'body-parser';
@@ -13,6 +12,8 @@ import { IMongoService } from './database';
 import { UsersRepository } from './modules/users/repositories/users.repository';
 import { CategoriesController } from './modules/categories/controllers/categories.controller';
 import { CategoryRepository } from './modules/categories/repositories/categories.reposotiries';
+import { ProductController } from './modules/products/controllers/product.controller';
+import { ProductRepository } from './modules/products/repositories/product.repositories';
 
 @injectable()
 export class App {
@@ -29,6 +30,8 @@ export class App {
 		@inject(TYPES.UsersRepository) private usersRepository: UsersRepository,
 		@inject(TYPES.CategoryController) private categoryController: CategoriesController,
 		@inject(TYPES.CategoriesRepository) private categoriesRepository: CategoryRepository,
+		@inject(TYPES.ProductController) private productController: ProductController,
+		@inject(TYPES.ProductRepository) private productRepository: ProductRepository,
 	) {
 		this.app = express();
 		this.port = this.configService.get('PORT') || 9000;
@@ -41,6 +44,7 @@ export class App {
 	useRoutes(): void {
 		this.app.use('/users', this.userController.router);
 		this.app.use('/categories', this.categoryController.router);
+		this.app.use('/products', this.productController.router);
 	}
 
 	useExeptionFilters(): void {

@@ -44,4 +44,7 @@ export class CategoryService implements ICategoryService {
 
 		return await this.categoriesRepository.updateById(id, dto);
 	}
+	async removeCategory(id: string): Promise<string | null> {
+		return await this.categoriesRepository.removeById(id);
+	}
 }

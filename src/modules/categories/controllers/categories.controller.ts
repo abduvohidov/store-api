@@ -34,6 +34,12 @@ export class CategoriesController extends BaseController implements ICategoryCon
 				func: this.update.bind(this),
 			},
 			{
+				path: '/remove/:id',
+				method: 'delete',
+				func: this.remove.bind(this),
+			},
+
+			{
 				path: '/name/:name',
 				method: 'get',
 				func: this.findByName.bind(this),
@@ -139,5 +145,16 @@ export class CategoriesController extends BaseController implements ICategoryCon
 		} catch (error) {
 			next(error);
 		}
+	}
+	async remove(req: Request, res: Response, next: NextFunction): Promise<void> {
+		const { id } = req.params;
+		const result = await this.categoryService.removeCategory(id);
+		if (!result) {
+			return next(new HTTPError(422, 'Нет такого категории'));
+		}
+		this.ok(res, {
+			status: true,
+			message: 'Категория успешно удалено',
+		});
 	}
 }
