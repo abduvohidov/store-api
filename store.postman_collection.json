@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "e814af58-8939-4bab-beea-35154d443711",
+		"name": "store",
+		"description": "# store\n\nAdd collection description…﻿  \n\n## users\n\nAdd folder description…﻿  \n\n### POSTregister\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/users/register\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"name\": \"user\",\n    \"email\": \"user@gmail.com\",\n    \"password\": \"1111\"\n}\n\n ```\n\n### POSTlogin\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/users/login\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"email\": \"user@gmail.com\",\n    \"password\": \"1111\"\n}\n\n ```\n\n### GETgetAll\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/users/all\n\nAdd request description…﻿  \n\n## categories\n\nAdd folder description…﻿  \n\n### POSTcreate\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/categories/create\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"name\": \"ca\",\n    \"productsId\": \"1\"\n}\n\n ```\n\n### PATCHupdate\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/categories/update/66e340644b71f07ce3748a3c\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"name\": \"category-122\",\n    \"productsId\": \"2\"\n}\n\n ```\n\n### DELETEremove\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/categories/remove/66e3756dccdce66f420df4c6\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"name\": \"product-updated-1\",\n    \"productsId\": \"2\"\n}\n\n ```\n\n### GETgetAll\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/categories/all\n\nAdd request description…﻿  \n\n### GETgetByName\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/categories/name/c\n\nAdd request description…﻿  \n\n### GETgetById\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/categories/id/66e346d237579c1aed411053\n\nAdd request description…﻿  \n\n## products\n\nAdd folder description…﻿  \n\n### POSTcreate\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/products/create\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"name\": \"product-1\"\n}\n\n ```\n\n### PATCHupdate\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/products/update/66e3780811c65440a34e767e\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"name\": \"product-updated-2\",\n    \"productsId\": \"2\"\n}\n\n ```\n\n### DELETEremove\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/products/remove/66e3780811c65440a34e767e\n\nAdd request description…﻿  \n\nBodyraw (json)json\n\n```\n{\n    \"name\": \"product-updated-1\",\n    \"productsId\": \"2\"\n}\n\n ```\n\n### GETgetAll\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/products/all\n\nAdd request description…﻿  \n\n### GETgetByName\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/products/name/product-updated-1\n\nAdd request description…﻿  \n\n### GETgetById\n\n[Open request](https://desktop.postman.com/?desktopVersion=11.12.0&userId=28558820&teamId=6228595&region=us)http://localhost:9000/products/id/66e36fc6558929b0e74c6d28",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28558820",
+		"_collection_link": "https://speeding-space-341953.postman.co/workspace/3662f73f-cf47-4e58-8c96-af50addba72a/collection/28558820-e814af58-8939-4bab-beea-35154d443711?action=share&source=collection_link&creator=28558820"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"user\",\n    \"email\": \"user@gmail.com\",\n    \"password\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@gmail.com\",\n    \"password\": \"1111\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"ca\",\n    \"productsId\": \"1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/categories/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"category-122\",\n    \"productsId\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/categories/update/66e340644b71f07ce3748a3c",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								"update",
+								"66e340644b71f07ce3748a3c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"product-updated-1\",\n    \"productsId\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/categories/remove/66e3756dccdce66f420df4c6",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								"remove",
+								"66e3756dccdce66f420df4c6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/categories/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/categories/name/c",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								"name",
+								"c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/categories/id/66e346d237579c1aed411053",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"categories",
+								"id",
+								"66e346d237579c1aed411053"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"product-1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products/create",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"product-updated-2\",\n    \"productsId\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products/update/66e3780811c65440a34e767e",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								"update",
+								"66e3780811c65440a34e767e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "remove",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"product-updated-1\",\n    \"productsId\": \"2\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products/remove/66e3780811c65440a34e767e",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								"remove",
+								"66e3780811c65440a34e767e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/name/product-updated-1",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								"name",
+								"product-updated-1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/id/66e36fc6558929b0e74c6d28",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								"id",
+								"66e36fc6558929b0e74c6d28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:9000",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
