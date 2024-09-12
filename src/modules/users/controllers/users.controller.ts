@@ -75,16 +75,14 @@ export class UserController extends BaseController implements IUserController {
 	}
 
 	async getUsers(req: Request, res: Response, next: NextFunction): Promise<IUserModel[] | void> {
-		const result = await this.userService.getUsers();
-		if (!result) {
+		const data = await this.userService.getUsers();
+		if (!data) {
 			return next(new HTTPError(422, 'Нет пользователей'));
 		}
 		this.ok(res, {
 			status: true,
 			message: 'Успешно предоставленные пользователи',
-			data: {
-				result,
-			},
+			data,
 		});
 	}
 }
