@@ -14,6 +14,12 @@ import { IUserService } from './modules/users/services/users.service.interface';
 import { IMongoService, MongoService } from './database';
 import { UsersRepository } from './modules/users/repositories/users.repository';
 import { IUserRepository } from './modules/users/repositories/users.repository.interface';
+import { ICategoryController } from './modules/categories/controllers/categories.controller.interface';
+import { ICategoryService } from './modules/categories/services/categories.service.interface';
+import { ICategoryRepository } from './modules/categories/repositories/categories.reposotiries.interface';
+import { CategoriesController } from './modules/categories/controllers/categories.controller';
+import { CategoryService } from './modules/categories/services/categories.service';
+import { CategoryRepository } from './modules/categories/repositories/categories.reposotiries';
 
 export interface IBootstrapReturn {
 	appContainer: Container;
@@ -23,11 +29,14 @@ export interface IBootstrapReturn {
 export const appBindings = new ContainerModule((bind: interfaces.Bind) => {
 	bind<ILogger>(TYPES.ILogger).to(LoggerService).inSingletonScope();
 	bind<IExeptionFilter>(TYPES.ExeptionFilter).to(ExeptionFilter);
+	bind<IConfigService>(TYPES.ConfigService).to(ConfigService).inSingletonScope();
+	bind<IMongoService>(TYPES.MongoService).to(MongoService).inSingletonScope();
 	bind<IUserController>(TYPES.UserController).to(UserController);
 	bind<IUserService>(TYPES.UserService).to(UserService);
 	bind<IUserRepository>(TYPES.UsersRepository).to(UsersRepository);
-	bind<IConfigService>(TYPES.ConfigService).to(ConfigService).inSingletonScope();
-	bind<IMongoService>(TYPES.MongoService).to(MongoService).inSingletonScope();
+	bind<ICategoryController>(TYPES.CategoryController).to(CategoriesController);
+	bind<ICategoryService>(TYPES.CategoryService).to(CategoryService);
+	bind<ICategoryRepository>(TYPES.CategoriesRepository).to(CategoryRepository);
 	bind<App>(TYPES.Application).to(App);
 });
 
