@@ -13,6 +13,7 @@ const categorySchema = new Schema<ICategoryModel>(
 		productsId: {
 			type: String,
 			required: true,
+			ref: 'Product',
 		},
 	},
 	{
