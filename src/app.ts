@@ -5,6 +5,7 @@ import { ILogger } from './logger/logger.interface';
 import { TYPES } from './types';
 import { json } from 'body-parser';
 import 'reflect-metadata';
+import cors from 'cors';
 import { IConfigService } from './config/config.service.interface';
 import { IExeptionFilter } from './errors/exeption.filter.interface';
 import { UserController } from './modules/users/controllers/users.controller';
@@ -42,9 +43,27 @@ export class App {
 	}
 
 	useRoutes(): void {
+		this.app.use(
+			cors({
+				origin: 'http://localhost:3000',
+				methods: ['GET', 'POST', 'PUT', 'DELETE'],
+				credentials: true,
+			}),
+		);
 		this.app.use('/users', this.userController.router);
 		this.app.use('/categories', this.categoryController.router);
 		this.app.use('/products', this.productController.router);
+		this.app.use('/*', (req, res) => {
+			return res.status(200).send({
+				status: true,
+				message: 'Server run successfully',
+				data: [
+					`http://localhost:${this.port}/users/all`,
+					`http://localhost:${this.port}/categories/all`,
+					`http://localhost:${this.port}/products/all`,
+				],
+			});
+		});
 	}
 
 	useExeptionFilters(): void {

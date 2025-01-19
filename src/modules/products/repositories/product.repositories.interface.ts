@@ -3,7 +3,7 @@ import { Product } from '../models/product.entity';
 import { IProductModel } from '../models/product.model.interface';
 
 export interface IProductRepository {
-	create: (name: Product) => Promise<IProductModel>;
+	create: ({ name, price, img }: Product) => Promise<IProductModel>;
 	find: () => Promise<IProductModel[]>;
 	findByName: (name: string) => Promise<IProductModel | null>;
 	findById: (id: string) => Promise<IProductModel | null>;

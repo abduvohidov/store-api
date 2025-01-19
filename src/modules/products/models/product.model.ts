@@ -10,6 +10,13 @@ const productSchema = new Schema<IProductModel>(
 			type: String,
 			required: true,
 		},
+		price: {
+			type: String,
+			required: true,
+		},
+		img: {
+			type: String,
+		},
 	},
 	{
 		collection: 'products',

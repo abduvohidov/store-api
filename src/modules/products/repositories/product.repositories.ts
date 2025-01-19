@@ -11,10 +11,8 @@ import { ProductUpdateDto } from '../dto/product-update.dto';
 export class ProductRepository implements IProductRepository {
 	constructor(@inject(TYPES.MongoService) private mongoService: MongoService) {}
 
-	async create({ name }: Product): Promise<IProductModel> {
-		const newProduct = await productModel.create({
-			name,
-		});
+	async create({ name, price, img }: Product): Promise<IProductModel> {
+		const newProduct = await productModel.create({ name, price, img });
 		return newProduct;
 	}
 

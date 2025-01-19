@@ -15,8 +15,8 @@ export class ProductService implements IProductService {
 		@inject(TYPES.ProductRepository) private productRepository: IProductRepository,
 	) {}
 
-	async createProduct({ name }: ProductCreateDto): Promise<IProductModel | null> {
-		const newProduct = new Product(name);
+	async createProduct({ name, price, img }: ProductCreateDto): Promise<IProductModel | null> {
+		const newProduct = new Product(name, price, img);
 		const existedProduct = await this.productRepository.findByName(name);
 		if (existedProduct) {
 			return null;

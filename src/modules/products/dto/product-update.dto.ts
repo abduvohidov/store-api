@@ -6,4 +6,10 @@ export class ProductUpdateDto {
 
 	@IsString()
 	name: string;
+
+	@IsString()
+	price: string;
+
+	@IsString()
+	img: string;
 }

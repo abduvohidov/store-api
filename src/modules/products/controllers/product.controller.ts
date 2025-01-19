@@ -66,6 +66,8 @@ export class ProductController extends BaseController implements IProductControl
 			data: {
 				_id: result.id,
 				name: result.name,
+				price: result.price,
+				img: result.img,
 			},
 		});
 	}
